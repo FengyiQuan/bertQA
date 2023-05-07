@@ -33,6 +33,11 @@ def answer_question(question, context):
 
 
 @require_GET
+def home(request: HttpRequest):
+    return HttpResponse("Hello, world. You're at the index.")
+
+
+@require_GET
 def ask(request: HttpRequest):
     body_unicode = request.body.decode('utf-8')
     body = json.loads(body_unicode)
